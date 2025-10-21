@@ -1,0 +1,35 @@
+# Archivos de compilación del kernel
+*.o
+*.ko
+*.mod.c
+*.symvers
+*.order
+*.markers
+*.cmd
+*.tmp_versions/
+Module.symvers
+modules.order
+
+# Archivos de respaldo y temporales
+*~
+*.swp
+*.bak
+*.log
+
+# Archivos de editor
+.vscode/
+.idea/
+*.code-workspace
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de prueba o binarios
+a.out
+*.out
+*.bin
+*.elf
+
+# Archivos de usuario
+build.sh
