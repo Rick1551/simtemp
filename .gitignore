@@ -1,35 +1,43 @@
-# Archivos de compilación del kernel
-*.o
-*.ko
-*.mod.c
-*.symvers
-*.order
-*.markers
-*.cmd
-*.tmp_versions/
-Module.symvers
-modules.order
+# Build output directory
+out/
 
-# Archivos de respaldo y temporales
-*~
-*.swp
-*.bak
-*.log
+# Kernel module build artifacts (in source directory)
+kernel/*.ko
+kernel/*.mod.c
+kernel/*.mod.o
+kernel/*.o
+kernel/Module.symvers
+kernel/modules.order
 
-# Archivos de editor
+# User application build artifacts (in source directory)
+user/cli/main
+user/gui/*.exe
+user/gui/*.app
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# IDE files
 .vscode/
 .idea/
-*.code-workspace
+*.swp
+*.swo
+*~
 
-# Archivos de sistema
+# OS files
 .DS_Store
 Thumbs.db
 
-# Archivos de prueba o binarios
-a.out
-*.out
-*.bin
-*.elf
+# Temporary files
+*.tmp
+*.temp
+*.log
 
-# Archivos de usuario
-build.sh
+# Test files
+/tmp/test_poll
+/tmp/test_poll.c
