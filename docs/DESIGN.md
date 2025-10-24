@@ -1,4 +1,3 @@
-High-Level Architecture
 ┌─────────────────────────────────────────────────────────────┐
 │                    User Space Applications                  │
 ├─────────────────────────────────────────────────────────────┤
@@ -21,7 +20,7 @@ High-Level Architecture
                                 │
                                 ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    Driver Core Layer                       │
+│                    Driver Core Layer                        │
 ├─────────────────────────────────────────────────────────────┤
 │  Platform Driver  │  Device Tree  │  Configuration         │
 └─────────────────────────────────────────────────────────────┘
@@ -35,10 +34,11 @@ High-Level Architecture
                                 │
                                 ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    Timer Subsystem                         │
+│                    Timer Subsystem                          │
 ├─────────────────────────────────────────────────────────────┤
-│  High-Resolution Timer  │  Periodic Sampling              │
+│  High-Resolution Timer  │  Periodic Sampling               │
 └─────────────────────────────────────────────────────────────┘
+
 Component Interaction
 The system follows a layered architecture with clear separation of concerns:
 
