@@ -13,16 +13,24 @@ Driver Core Layer: Manages device lifecycle, configuration, and device tree inte
 Data Processing Layer: Handles temperature simulation, buffering, and statistics
 Timer Subsystem: Provides precise timing for periodic temperature sampling
 Data Flow
-Temperature Sample Generation
+
+## Temperature Sample Generation
+```
 Timer Interrupt → Temperature Generation → Ring Buffer → Wait Queue Wake → User Read
      │                    │                    │              │
      ▼                    ▼                    ▼              ▼
 HRTimer Callback → Mode Selection → Buffer Write → Poll/Read Ready
-Configuration Flow
+```
+
+
+## Configuration Flow
+```
 User Space → Sysfs Write → Driver Config → Timer Restart → New Behavior
      │            │              │              │
      ▼            ▼              ▼              ▼
 CLI App → /sys/class/... → Mutex Lock → HRTimer Update
+```
+
 Design Decisions
 1. Platform Driver vs. Misc Device
 Decision: Use platform driver with misc device for character device interface.
