@@ -17,3 +17,32 @@ See [Recommended Repository Layout](docs/README.md#4-recommended-repository-layo
 - Headers: Installed via `sudo apt install linux-headers-$(uname -r)`
 - Editor: Visual Studio Code with C/C++ extension (Microsoft)
 - IntelliSense configured via `.vscode/c_cpp_properties.json`
+
+## Project Structure 
+```
+simtemp/
+├─ kernel/
+│  ├─ Kbuild
+│  ├─ Makefile
+│  ├─ nxp_simtemp.c
+│  ├─ nxp_simtemp.h
+│  ├─ nxp_simtemp_ioctl.h
+│  └─ dts/
+│     └─ nxp-simtemp.dtsi
+├─ user/
+│  ├─ cli/
+│  │  ├─ main.cpp           
+│  │  └─ requirements.txt  
+│  └─ gui/                  
+│     └─ qt_app.cpp   
+├─ scripts/
+│  ├─ build.sh
+│  ├─ run_demo.sh
+│  └─ lint.sh               
+├─ docs/
+│  ├─ README.md
+│  ├─ DESIGN.md           
+│  ├─ TESTPLAN.md
+│  └─ AI_NOTES.md           
+└─ .gitignore
+```
