@@ -372,7 +372,7 @@ nxp_simtemp_probe(
     
     /* Create character device */
     data->miscdev.minor = MISC_DYNAMIC_MINOR;
-    data->miscdev.name = DEVICE_NAME;
+    data->miscdev.name = TEMPDEV_NAME;
     data->miscdev.fops = &nxp_simtemp_fops;
     data->miscdev.parent = &pdev->dev;
     data->miscdev.mode = 0666;  /* Set permissions to rw-rw-rw- */
@@ -1070,7 +1070,7 @@ nxp_simtemp_create_sysfs(
     int ret;
     
     /* Create device class */
-    data->class = class_create(CLASS_NAME);
+    data->class = class_create(TEMPDEV_CLASS);
     if (IS_ERR(data->class)) {
         ret = PTR_ERR(data->class);
         pr_err("Failed to create device class: %d\n", ret);
@@ -1079,7 +1079,7 @@ nxp_simtemp_create_sysfs(
     
     /* Create device */
     data->devt = MKDEV(MAJOR(data->miscdev.minor), data->miscdev.minor);
-    data->dev = device_create(data->class, NULL, data->devt, data, DEVICE_NAME);
+    data->dev = device_create(data->class, NULL, data->devt, data, TEMPDEV_NAME);
     if (IS_ERR(data->dev)) {
         ret = PTR_ERR(data->dev);
         pr_err("Failed to create device: %d\n", ret);
