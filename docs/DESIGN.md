@@ -39,6 +39,7 @@
 │  High-Resolution Timer  │  Periodic Sampling               │
 └─────────────────────────────────────────────────────────────┘
 
+
 Component Interaction
 The system follows a layered architecture with clear separation of concerns:
 
